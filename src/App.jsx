@@ -1,4 +1,6 @@
 import WeatherForecast from './WeatherForecast.jsx';
+import './App.css';
+
 
 const App = () => {
 
@@ -44,7 +46,16 @@ const App = () => {
   <>
     <h1>Local Weather</h1>
     <section>
-      <WeatherForecast forecasts = {WeatherForecast} />
+        {weatherForecasts.map((forecast) => (
+          <WeatherForecast
+          day={forecast.day}
+          img={forecast.img}
+          imgAlt={forecast.imgAlt}
+          conditions={forecast.conditions}
+          time={forecast.time}
+          />
+        )
+      )}
     </section>
   </>
   );
